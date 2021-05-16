@@ -1,0 +1,23 @@
+{
+  "name": "w08d01_mongodb-mongoose",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bushra1997/W08D01_MongoDB-Mongoose.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bushra1997/W08D01_MongoDB-Mongoose/issues"
+  },
+  "homepage": "https://github.com/bushra1997/W08D01_MongoDB-Mongoose#readme",
+  "dependencies": {
+    "mongoose": "^5.12.9"
+  }
+}
