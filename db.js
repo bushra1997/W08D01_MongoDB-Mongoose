@@ -7,7 +7,7 @@ const option = {
     useNewUrlParser: true,
 }
 
-mongoose.connect("mongodb://localhost:27017/", option).then(
+mongoose.connect("mongodb://localhost:27017/DB", option).then(
     () => {
         console.log("DB connected");
     },

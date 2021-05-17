@@ -15,6 +15,18 @@ app.get("/todos", (req, res) => {
       res.json(error);
     });
 });
+
+app.get("/completed", (req, res) => {
+  todoModel
+    .find({ isCompleted: true })
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((error) => {
+      res.json(error);
+    });
+});
+
 app.post("/create/todo", (req, res) => {
   const { task, description, deadline, isCompleted, priority } = req.body;
   const todo = new todoModel({
@@ -34,7 +46,9 @@ app.post("/create/todo", (req, res) => {
       res.send(err);
     });
 });
-app.put("/update/todo", (req, res) => {});
+app.put("/update/todo", (req, res) => {
+    
+});
 app.delete("/delete/todo", (req, res) => {});
 
 const port = 3000;

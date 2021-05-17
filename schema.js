@@ -7,3 +7,5 @@ const todosSchema = new mongoose.Schema({
   isCompleted: { type: Boolean },
   priority: { type: Number }
 });
+
+module.exports = mongoose.model("ToDO", todosSchema);
