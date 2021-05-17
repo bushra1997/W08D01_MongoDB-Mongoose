@@ -1,6 +1,7 @@
 const express = require("express");
 const todoModel = require("./schema");
 const db = require("./db");
+const { error } = require("console");
 
 const app = express();
 app.use(express.json());
@@ -47,9 +48,26 @@ app.post("/create/todo", (req, res) => {
     });
 });
 app.put("/update/todo", (req, res) => {
-    
+    todoModel
+    .findOneAndUpdate({priority: 1}, {isCompleted:false})
+    .then((result)=>{
+        res.json(result)
+    })
+    .catch((error)=>{
+        res.send(error)
+    })
 });
-app.delete("/delete/todo", (req, res) => {});
+
+app.delete("/delete/todo", (req, res) => {
+  todoModel
+    .findOneAndDelete({ isCompleted: false })
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((error) => {
+      res.send(error);
+    });
+});
 
 const port = 3000;
 app.listen(port, () => {

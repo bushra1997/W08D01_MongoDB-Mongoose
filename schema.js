@@ -8,4 +8,4 @@ const todosSchema = new mongoose.Schema({
   priority: { type: Number }
 });
 
-module.exports = mongoose.model("ToDO", todosSchema);
+module.exports = mongoose.model("todo", todosSchema);
